@@ -23,6 +23,14 @@ class MyHomePage extends StatefulWidget {
 }
 class _MyHomePageState extends State<MyHomePage> {
   String _location = "no data";
+
+  String lati = '';
+  String long = '';
+  String alti = '';
+  String dist = '';
+  String bear = '';
+
+
   Future<void> getLocation() async {
     // 現在の位置を返す
     Position position = await Geolocator.getCurrentPosition(
@@ -42,22 +50,29 @@ class _MyHomePageState extends State<MyHomePage> {
     print(bearing);
     setState(() {
       _location = position.toString();
+      //TODO 後で整理
+      lati = position.latitude.toString();
+      long = position.longitude.toString();
+      dist = position.altitude.toString();
+      bear = '$distanceInMeters';
+      bear = '$bearing';
     });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title!),
+        title: Text('aaa'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              '$_location',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            Text("緯度: " + lati),
+            Text("経度: " + long),
+            Text("高度: " + alti),
+            Text("高度: " + dist),
+            Text("方角: " + bear),
           ],
         ),
       ),
