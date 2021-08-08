@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("高度: " + dist),
             Text("方角: " + bear),
 
-            SizedBox(height: 30),
+           const SizedBox(height: 30),
 
             Text("緯度: " + lati2),
             Text("経度: " + long2),
