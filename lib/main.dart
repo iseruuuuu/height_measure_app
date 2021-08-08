@@ -33,37 +33,38 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> getLocation() async {
     // 現在の位置を返す
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
+    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     // 北緯がプラス。南緯がマイナス
-    print("緯度: " + position.latitude.toString());
+    //print("緯度: " + position.latitude.toString());
     // 東経がプラス、西経がマイナス
-    print("経度: " + position.longitude.toString());
+    //print("経度: " + position.longitude.toString());
     // 高度
-    print("高度: " + position.altitude.toString());
+    //print("高度: " + position.altitude.toString());
     // 距離をメートルで返す
     double distanceInMeters =
     Geolocator.distanceBetween(35.68, 139.76, -23.61, -46.40);
-    print(distanceInMeters);
+    //print(distanceInMeters);
     // 方位を返す
     double bearing = Geolocator.bearingBetween(35.68, 139.76, -23.61, -46.40);
-    print(bearing);
+    //print(bearing);
     setState(() {
       _location = position.toString();
-      //TODO 後で整理
+
+      //緯度
       lati = position.latitude.toString();
+      //経度
       long = position.longitude.toString();
-      dist = position.altitude.toString();
-      bear = '$distanceInMeters';
+      //高度
+      alti = position.altitude.toString();
+      //距離をメートルで返す
+      dist = '$distanceInMeters';
+      //方位
       bear = '$bearing';
     });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('aaa'),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: getLocation, child: Icon(Icons.location_on)),
+          onPressed: getLocation, child: const Icon(Icons.location_on)),
     );
   }
 }
