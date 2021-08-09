@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:math_expressions/math_expressions.dart';
+
+import 'home/home_screen.dart';
 void main() {
-  runApp(MyApp());
+  runApp(Home());
 }
 class MyApp extends StatelessWidget {
   @override

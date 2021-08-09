@@ -48,6 +48,11 @@ dev_dependencies:
   geolocator:
   math_expressions:
 
+  freezed:
+  flutter_state_notifier:
+  state_notifier:
+  build_runner:
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

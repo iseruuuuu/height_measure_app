@@ -21,8 +21,6 @@ class HomeScreen extends StatefulWidget {
 }
 class _HomeScreenState extends State<HomeScreen> {
 
-  String _location = "no data";
-
   String lati = '';
   String long = '';
   String alti = '';
@@ -68,7 +66,6 @@ class _HomeScreenState extends State<HomeScreen> {
       double bearing = Geolocator.bearingBetween(35.68, 139.76, -23.61, -46.40);
       //print(bearing);
       setState(() {
-        _location = position.toString();
         //緯度
         lati = position.latitude.toString();
         //経度
@@ -137,6 +134,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Home_Screen'),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
