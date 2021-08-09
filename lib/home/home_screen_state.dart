@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:state_notifier/state_notifier.dart';
-
 import 'package:geolocator/geolocator.dart';
+import 'package:state_notifier/state_notifier.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'home_screen_state.freezed.dart';
 
@@ -50,26 +49,8 @@ class HomeScreenController extends StateNotifier<HomeScreenState> with LocatorMi
   String dist2 = '';
   String bear2 = '';
 
-  String lati4 = '';
-  String long4 = '';
-  String alti4 = '';
-  String dist4 = '';
-  String bear4 = '';
-
-  String lati6 = '';
-  String long6 = '';
-  String alti6 = '';
-  String dist6 = '';
-  String bear6 = '';
-
   bool change = false;
   bool change2 = false;
-
-  @override
-  void initState() {
-    super.initState();
-
-  }
 
   Future<void> getLocation() async {
     if(change == false) {
@@ -83,11 +64,11 @@ class HomeScreenController extends StateNotifier<HomeScreenState> with LocatorMi
       bear = '$bearing';
 
       state = state.copyWith(
-        latitude: lati,
-        longitude: long,
-        altitude: alti,
-        distanceInMeters: dist,
-        bearing: bear,
+        latitude: position.latitude.toString(),
+        longitude: position.longitude.toString(),
+        altitude: position.altitude.toString(),
+        distanceInMeters: '$distanceInMeters',
+        bearing: '$bearing',
       );
 
     }else{
@@ -108,35 +89,21 @@ class HomeScreenController extends StateNotifier<HomeScreenState> with LocatorMi
 
     if(change2 == false) {
     }else{
-      lati4 = lati + '-' + lati2;
-      long4 = long + '-' + long2;
-      alti4 = alti + '-' + alti2;
-      dist4 = dist + '-' + dist2;
-      bear4 = bear + '-' + bear2;
-
       Parser p = Parser();
-      Expression exp = p.parse(lati4);
-      Expression exp2 = p.parse(long4);
-      Expression exp3 = p.parse(alti4);
-      Expression exp4 = p.parse(dist4);
-      Expression exp5 = p.parse(bear4);
+      Expression exp = p.parse(lati + '-' + lati2);
+      Expression exp2 = p.parse(long + '-' + long2);
+      Expression exp3 = p.parse(alti + '-' + alti2);
+      Expression exp4 = p.parse(dist + '-' + dist2);
+      Expression exp5 = p.parse(bear + '-' + bear2);
       ContextModel cm = ContextModel();
 
-      lati6 = exp.evaluate(EvaluationType.REAL, cm).toString();
-      long6 = exp2.evaluate(EvaluationType.REAL, cm).toString();
-      alti6 = exp3.evaluate(EvaluationType.REAL, cm).toString();
-      dist6 = exp4.evaluate(EvaluationType.REAL, cm).toString();
-      bear6 = exp5.evaluate(EvaluationType.REAL, cm).toString();
-
       state = state.copyWith(
-        latitude3: lati6,
-        longitude3: long6,
-        altitude3: alti6,
-        distanceInMeters3: dist6,
-        bearing3: bear6,
+        latitude3: exp.evaluate(EvaluationType.REAL, cm).toString(),
+        longitude3:exp2.evaluate(EvaluationType.REAL, cm).toString(),
+        altitude3: exp3.evaluate(EvaluationType.REAL, cm).toString(),
+        distanceInMeters3: exp4.evaluate(EvaluationType.REAL, cm).toString(),
+        bearing3: exp5.evaluate(EvaluationType.REAL, cm).toString(),
       );
-
-
     }
   }
 
