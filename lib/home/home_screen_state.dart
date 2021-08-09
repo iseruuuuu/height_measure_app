@@ -16,6 +16,18 @@ abstract class HomeScreenState with _$HomeScreenState {
     @Default('') String altitude,
     @Default('') String distanceInMeters,
     @Default('') String bearing,
+
+    @Default('') String latitude2,
+    @Default('') String longitude2,
+    @Default('') String altitude2,
+    @Default('') String distanceInMeters2,
+    @Default('') String bearing2,
+
+    @Default('') String latitude3,
+    @Default('') String longitude3,
+    @Default('') String altitude3,
+    @Default('') String distanceInMeters3,
+    @Default('') String bearing3,
   }) = _HomeScreenState;
 }
 
@@ -61,36 +73,37 @@ class HomeScreenController extends StateNotifier<HomeScreenState> with LocatorMi
 
   Future<void> getLocation() async {
     if(change == false) {
-      // 現在の位置を返す
       Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-      // 北緯がプラス。南緯がマイナス
-      //print("緯度: " + position.latitude.toString());
-      // 東経がプラス、西経がマイナス
-      //print("経度: " + position.longitude.toString());
-      // 高度
-      //print("高度: " + position.altitude.toString());
-      // 距離をメートルで返す
       double distanceInMeters = Geolocator.distanceBetween(35.68, 139.76, -23.61, -46.40);
-      //print(distanceInMeters);
-      // 方位を返す
       double bearing = Geolocator.bearingBetween(35.68, 139.76, -23.61, -46.40);
-      //print(bearing);
-      //緯度
       lati = position.latitude.toString();
-      //経度
       long = position.longitude.toString();
-      //高度
       alti = position.altitude.toString();
-      //距離をメートルで返す
       dist = '$distanceInMeters';
-      //方位
       bear = '$bearing';
+
+      state = state.copyWith(
+        latitude: lati,
+        longitude: long,
+        altitude: alti,
+        distanceInMeters: dist,
+        bearing: bear,
+      );
+
     }else{
       lati2 = lati;
       long2 = long;
       alti2 = alti;
       dist2 = dist;
       bear2 = bear;
+
+      state = state.copyWith(
+        latitude2: lati2,
+        longitude2: long2,
+        altitude2: alti2,
+        distanceInMeters2: dist2,
+        bearing2: bear2,
+      );
     }
 
     if(change2 == false) {
@@ -116,11 +129,11 @@ class HomeScreenController extends StateNotifier<HomeScreenState> with LocatorMi
       bear6 = exp5.evaluate(EvaluationType.REAL, cm).toString();
 
       state = state.copyWith(
-        latitude: lati6,
-        longitude: long6,
-        altitude: alti6,
-        distanceInMeters: dist6,
-        bearing: bear6,
+        latitude3: lati6,
+        longitude3: long6,
+        altitude3: alti6,
+        distanceInMeters3: dist6,
+        bearing3: bear6,
       );
 
 

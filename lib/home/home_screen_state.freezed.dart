@@ -21,13 +21,33 @@ class _$HomeScreenStateTearOff {
       String longitude = '',
       String altitude = '',
       String distanceInMeters = '',
-      String bearing = ''}) {
+      String bearing = '',
+      String latitude2 = '',
+      String longitude2 = '',
+      String altitude2 = '',
+      String distanceInMeters2 = '',
+      String bearing2 = '',
+      String latitude3 = '',
+      String longitude3 = '',
+      String altitude3 = '',
+      String distanceInMeters3 = '',
+      String bearing3 = ''}) {
     return _HomeScreenState(
       latitude: latitude,
       longitude: longitude,
       altitude: altitude,
       distanceInMeters: distanceInMeters,
       bearing: bearing,
+      latitude2: latitude2,
+      longitude2: longitude2,
+      altitude2: altitude2,
+      distanceInMeters2: distanceInMeters2,
+      bearing2: bearing2,
+      latitude3: latitude3,
+      longitude3: longitude3,
+      altitude3: altitude3,
+      distanceInMeters3: distanceInMeters3,
+      bearing3: bearing3,
     );
   }
 }
@@ -42,6 +62,16 @@ mixin _$HomeScreenState {
   String get altitude => throw _privateConstructorUsedError;
   String get distanceInMeters => throw _privateConstructorUsedError;
   String get bearing => throw _privateConstructorUsedError;
+  String get latitude2 => throw _privateConstructorUsedError;
+  String get longitude2 => throw _privateConstructorUsedError;
+  String get altitude2 => throw _privateConstructorUsedError;
+  String get distanceInMeters2 => throw _privateConstructorUsedError;
+  String get bearing2 => throw _privateConstructorUsedError;
+  String get latitude3 => throw _privateConstructorUsedError;
+  String get longitude3 => throw _privateConstructorUsedError;
+  String get altitude3 => throw _privateConstructorUsedError;
+  String get distanceInMeters3 => throw _privateConstructorUsedError;
+  String get bearing3 => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeScreenStateCopyWith<HomeScreenState> get copyWith =>
@@ -58,7 +88,17 @@ abstract class $HomeScreenStateCopyWith<$Res> {
       String longitude,
       String altitude,
       String distanceInMeters,
-      String bearing});
+      String bearing,
+      String latitude2,
+      String longitude2,
+      String altitude2,
+      String distanceInMeters2,
+      String bearing2,
+      String latitude3,
+      String longitude3,
+      String altitude3,
+      String distanceInMeters3,
+      String bearing3});
 }
 
 /// @nodoc
@@ -77,6 +117,16 @@ class _$HomeScreenStateCopyWithImpl<$Res>
     Object? altitude = freezed,
     Object? distanceInMeters = freezed,
     Object? bearing = freezed,
+    Object? latitude2 = freezed,
+    Object? longitude2 = freezed,
+    Object? altitude2 = freezed,
+    Object? distanceInMeters2 = freezed,
+    Object? bearing2 = freezed,
+    Object? latitude3 = freezed,
+    Object? longitude3 = freezed,
+    Object? altitude3 = freezed,
+    Object? distanceInMeters3 = freezed,
+    Object? bearing3 = freezed,
   }) {
     return _then(_value.copyWith(
       latitude: latitude == freezed
@@ -99,6 +149,46 @@ class _$HomeScreenStateCopyWithImpl<$Res>
           ? _value.bearing
           : bearing // ignore: cast_nullable_to_non_nullable
               as String,
+      latitude2: latitude2 == freezed
+          ? _value.latitude2
+          : latitude2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      longitude2: longitude2 == freezed
+          ? _value.longitude2
+          : longitude2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      altitude2: altitude2 == freezed
+          ? _value.altitude2
+          : altitude2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      distanceInMeters2: distanceInMeters2 == freezed
+          ? _value.distanceInMeters2
+          : distanceInMeters2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      bearing2: bearing2 == freezed
+          ? _value.bearing2
+          : bearing2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      latitude3: latitude3 == freezed
+          ? _value.latitude3
+          : latitude3 // ignore: cast_nullable_to_non_nullable
+              as String,
+      longitude3: longitude3 == freezed
+          ? _value.longitude3
+          : longitude3 // ignore: cast_nullable_to_non_nullable
+              as String,
+      altitude3: altitude3 == freezed
+          ? _value.altitude3
+          : altitude3 // ignore: cast_nullable_to_non_nullable
+              as String,
+      distanceInMeters3: distanceInMeters3 == freezed
+          ? _value.distanceInMeters3
+          : distanceInMeters3 // ignore: cast_nullable_to_non_nullable
+              as String,
+      bearing3: bearing3 == freezed
+          ? _value.bearing3
+          : bearing3 // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -115,7 +205,17 @@ abstract class _$HomeScreenStateCopyWith<$Res>
       String longitude,
       String altitude,
       String distanceInMeters,
-      String bearing});
+      String bearing,
+      String latitude2,
+      String longitude2,
+      String altitude2,
+      String distanceInMeters2,
+      String bearing2,
+      String latitude3,
+      String longitude3,
+      String altitude3,
+      String distanceInMeters3,
+      String bearing3});
 }
 
 /// @nodoc
@@ -136,6 +236,16 @@ class __$HomeScreenStateCopyWithImpl<$Res>
     Object? altitude = freezed,
     Object? distanceInMeters = freezed,
     Object? bearing = freezed,
+    Object? latitude2 = freezed,
+    Object? longitude2 = freezed,
+    Object? altitude2 = freezed,
+    Object? distanceInMeters2 = freezed,
+    Object? bearing2 = freezed,
+    Object? latitude3 = freezed,
+    Object? longitude3 = freezed,
+    Object? altitude3 = freezed,
+    Object? distanceInMeters3 = freezed,
+    Object? bearing3 = freezed,
   }) {
     return _then(_HomeScreenState(
       latitude: latitude == freezed
@@ -158,6 +268,46 @@ class __$HomeScreenStateCopyWithImpl<$Res>
           ? _value.bearing
           : bearing // ignore: cast_nullable_to_non_nullable
               as String,
+      latitude2: latitude2 == freezed
+          ? _value.latitude2
+          : latitude2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      longitude2: longitude2 == freezed
+          ? _value.longitude2
+          : longitude2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      altitude2: altitude2 == freezed
+          ? _value.altitude2
+          : altitude2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      distanceInMeters2: distanceInMeters2 == freezed
+          ? _value.distanceInMeters2
+          : distanceInMeters2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      bearing2: bearing2 == freezed
+          ? _value.bearing2
+          : bearing2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      latitude3: latitude3 == freezed
+          ? _value.latitude3
+          : latitude3 // ignore: cast_nullable_to_non_nullable
+              as String,
+      longitude3: longitude3 == freezed
+          ? _value.longitude3
+          : longitude3 // ignore: cast_nullable_to_non_nullable
+              as String,
+      altitude3: altitude3 == freezed
+          ? _value.altitude3
+          : altitude3 // ignore: cast_nullable_to_non_nullable
+              as String,
+      distanceInMeters3: distanceInMeters3 == freezed
+          ? _value.distanceInMeters3
+          : distanceInMeters3 // ignore: cast_nullable_to_non_nullable
+              as String,
+      bearing3: bearing3 == freezed
+          ? _value.bearing3
+          : bearing3 // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -170,7 +320,17 @@ class _$_HomeScreenState implements _HomeScreenState {
       this.longitude = '',
       this.altitude = '',
       this.distanceInMeters = '',
-      this.bearing = ''});
+      this.bearing = '',
+      this.latitude2 = '',
+      this.longitude2 = '',
+      this.altitude2 = '',
+      this.distanceInMeters2 = '',
+      this.bearing2 = '',
+      this.latitude3 = '',
+      this.longitude3 = '',
+      this.altitude3 = '',
+      this.distanceInMeters3 = '',
+      this.bearing3 = ''});
 
   @JsonKey(defaultValue: '')
   @override
@@ -187,10 +347,40 @@ class _$_HomeScreenState implements _HomeScreenState {
   @JsonKey(defaultValue: '')
   @override
   final String bearing;
+  @JsonKey(defaultValue: '')
+  @override
+  final String latitude2;
+  @JsonKey(defaultValue: '')
+  @override
+  final String longitude2;
+  @JsonKey(defaultValue: '')
+  @override
+  final String altitude2;
+  @JsonKey(defaultValue: '')
+  @override
+  final String distanceInMeters2;
+  @JsonKey(defaultValue: '')
+  @override
+  final String bearing2;
+  @JsonKey(defaultValue: '')
+  @override
+  final String latitude3;
+  @JsonKey(defaultValue: '')
+  @override
+  final String longitude3;
+  @JsonKey(defaultValue: '')
+  @override
+  final String altitude3;
+  @JsonKey(defaultValue: '')
+  @override
+  final String distanceInMeters3;
+  @JsonKey(defaultValue: '')
+  @override
+  final String bearing3;
 
   @override
   String toString() {
-    return 'HomeScreenState(latitude: $latitude, longitude: $longitude, altitude: $altitude, distanceInMeters: $distanceInMeters, bearing: $bearing)';
+    return 'HomeScreenState(latitude: $latitude, longitude: $longitude, altitude: $altitude, distanceInMeters: $distanceInMeters, bearing: $bearing, latitude2: $latitude2, longitude2: $longitude2, altitude2: $altitude2, distanceInMeters2: $distanceInMeters2, bearing2: $bearing2, latitude3: $latitude3, longitude3: $longitude3, altitude3: $altitude3, distanceInMeters3: $distanceInMeters3, bearing3: $bearing3)';
   }
 
   @override
@@ -210,7 +400,38 @@ class _$_HomeScreenState implements _HomeScreenState {
                 const DeepCollectionEquality()
                     .equals(other.distanceInMeters, distanceInMeters)) &&
             (identical(other.bearing, bearing) ||
-                const DeepCollectionEquality().equals(other.bearing, bearing)));
+                const DeepCollectionEquality()
+                    .equals(other.bearing, bearing)) &&
+            (identical(other.latitude2, latitude2) ||
+                const DeepCollectionEquality()
+                    .equals(other.latitude2, latitude2)) &&
+            (identical(other.longitude2, longitude2) ||
+                const DeepCollectionEquality()
+                    .equals(other.longitude2, longitude2)) &&
+            (identical(other.altitude2, altitude2) ||
+                const DeepCollectionEquality()
+                    .equals(other.altitude2, altitude2)) &&
+            (identical(other.distanceInMeters2, distanceInMeters2) ||
+                const DeepCollectionEquality()
+                    .equals(other.distanceInMeters2, distanceInMeters2)) &&
+            (identical(other.bearing2, bearing2) ||
+                const DeepCollectionEquality()
+                    .equals(other.bearing2, bearing2)) &&
+            (identical(other.latitude3, latitude3) ||
+                const DeepCollectionEquality()
+                    .equals(other.latitude3, latitude3)) &&
+            (identical(other.longitude3, longitude3) ||
+                const DeepCollectionEquality()
+                    .equals(other.longitude3, longitude3)) &&
+            (identical(other.altitude3, altitude3) ||
+                const DeepCollectionEquality()
+                    .equals(other.altitude3, altitude3)) &&
+            (identical(other.distanceInMeters3, distanceInMeters3) ||
+                const DeepCollectionEquality()
+                    .equals(other.distanceInMeters3, distanceInMeters3)) &&
+            (identical(other.bearing3, bearing3) ||
+                const DeepCollectionEquality()
+                    .equals(other.bearing3, bearing3)));
   }
 
   @override
@@ -220,7 +441,17 @@ class _$_HomeScreenState implements _HomeScreenState {
       const DeepCollectionEquality().hash(longitude) ^
       const DeepCollectionEquality().hash(altitude) ^
       const DeepCollectionEquality().hash(distanceInMeters) ^
-      const DeepCollectionEquality().hash(bearing);
+      const DeepCollectionEquality().hash(bearing) ^
+      const DeepCollectionEquality().hash(latitude2) ^
+      const DeepCollectionEquality().hash(longitude2) ^
+      const DeepCollectionEquality().hash(altitude2) ^
+      const DeepCollectionEquality().hash(distanceInMeters2) ^
+      const DeepCollectionEquality().hash(bearing2) ^
+      const DeepCollectionEquality().hash(latitude3) ^
+      const DeepCollectionEquality().hash(longitude3) ^
+      const DeepCollectionEquality().hash(altitude3) ^
+      const DeepCollectionEquality().hash(distanceInMeters3) ^
+      const DeepCollectionEquality().hash(bearing3);
 
   @JsonKey(ignore: true)
   @override
@@ -234,7 +465,17 @@ abstract class _HomeScreenState implements HomeScreenState {
       String longitude,
       String altitude,
       String distanceInMeters,
-      String bearing}) = _$_HomeScreenState;
+      String bearing,
+      String latitude2,
+      String longitude2,
+      String altitude2,
+      String distanceInMeters2,
+      String bearing2,
+      String latitude3,
+      String longitude3,
+      String altitude3,
+      String distanceInMeters3,
+      String bearing3}) = _$_HomeScreenState;
 
   @override
   String get latitude => throw _privateConstructorUsedError;
@@ -246,6 +487,26 @@ abstract class _HomeScreenState implements HomeScreenState {
   String get distanceInMeters => throw _privateConstructorUsedError;
   @override
   String get bearing => throw _privateConstructorUsedError;
+  @override
+  String get latitude2 => throw _privateConstructorUsedError;
+  @override
+  String get longitude2 => throw _privateConstructorUsedError;
+  @override
+  String get altitude2 => throw _privateConstructorUsedError;
+  @override
+  String get distanceInMeters2 => throw _privateConstructorUsedError;
+  @override
+  String get bearing2 => throw _privateConstructorUsedError;
+  @override
+  String get latitude3 => throw _privateConstructorUsedError;
+  @override
+  String get longitude3 => throw _privateConstructorUsedError;
+  @override
+  String get altitude3 => throw _privateConstructorUsedError;
+  @override
+  String get distanceInMeters3 => throw _privateConstructorUsedError;
+  @override
+  String get bearing3 => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$HomeScreenStateCopyWith<_HomeScreenState> get copyWith =>
