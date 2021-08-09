@@ -37,23 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String dist2 = '';
   String bear2 = '';
 
-  String lati3 = '';
-  String long3 = '';
-  String alti3 = '';
-  String dist3 = '';
-  String bear3 = '';
-
   String lati4 = '';
   String long4 = '';
   String alti4 = '';
   String dist4 = '';
   String bear4 = '';
-
-  double lati5 = 0;
-  double long5 = 0;
-  double alti5 = 0;
-  double dist5 = 0;
-  double bear5 = 0;
 
   String lati6 = '';
   String long6 = '';
@@ -104,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     if(change2 == false) {
-      print('うつすよ??');
+
     }else{
       setState(() {
         lati4 = lati + '-' + lati2;
@@ -126,6 +114,12 @@ class _MyHomePageState extends State<MyHomePage> {
         alti6 = exp3.evaluate(EvaluationType.REAL, cm).toString();
         dist6 = exp4.evaluate(EvaluationType.REAL, cm).toString();
         bear6 = exp5.evaluate(EvaluationType.REAL, cm).toString();
+
+        print(lati6);
+        print(long6);
+        print(alti6);
+        print(dist6);
+        print(bear6);
       });
     }
   }
@@ -169,9 +163,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("高度: " + alti6),
             Text("距離: " + dist6),
             Text("方角: " + bear6),
-
-
-
           ],
         ),
       ),
@@ -184,23 +175,22 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               tap();
             },
-            child: const Icon(Icons.extension),
+            child: const Text('1'),
           ),
-          Container( // 余白のためContainerでラップ
+          Container(
             margin: const EdgeInsets.only(bottom: 16.0),
             child:  FloatingActionButton(
               onPressed: getLocation,
               child: const Icon(Icons.location_on),
             ),
           ),
-
-          Container( // 余白のためContainerでラップ
+          Container(
             margin: const EdgeInsets.only(bottom: 16.0),
             child:  FloatingActionButton(
               onPressed: () {
                 tap2();
               },
-              child: const Icon(Icons.camera),
+              child: const Text('2'),
             ),
           ),
 
