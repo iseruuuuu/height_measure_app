@@ -59,7 +59,6 @@ class _HomeState extends State<HomeScreen> {
             ),
             body: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -76,22 +75,22 @@ class _HomeState extends State<HomeScreen> {
                       ),
                       Column(
                         children: [
-                          Text('2回目の計測'),
-                          Text('緯度は、' + latitude2),
-                          Text('経度は、' + longitude2),
-                          Text('高度は、' + altitude2),
-                          Text('距離は、' + distanceInMeters2),
-                          Text('方角は、' + bearing2),
+                          const Text('2回目の計測'),
+                          Text(latitude2),
+                          Text(longitude2),
+                          Text(altitude2),
+                          Text(distanceInMeters2),
+                          Text(bearing2),
                         ],
                       ),
                       Column(
                         children: [
                           const Text('差分'),
-                          Text('緯度は、' + latitude3),
-                          Text('経度は、' + longitude3),
-                          Text('高度は、' + altitude3),
-                          Text('距離は、' + distanceInMeters3),
-                          Text('方角は、' + bearing3),
+                          Text(latitude3),
+                          Text(longitude3),
+                          Text(altitude3),
+                          Text(distanceInMeters3),
+                          Text(bearing3),
                         ],
                       ),
                     ],
@@ -102,11 +101,11 @@ class _HomeState extends State<HomeScreen> {
                   ),
                   ElevatedButton(
                     onPressed: () => context.read<HomeScreenController>().tap(),
-                    child: const Text('②'),
+                    child: const Text('②2回目の計測'),
                   ),
                   ElevatedButton(
                     onPressed: () => context.read<HomeScreenController>().tap2(),
-                    child: const Text('③'),
+                    child: const Text('③差分のための計算'),
                   ),
                 ],
               ),
