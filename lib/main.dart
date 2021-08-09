@@ -42,6 +42,18 @@ class _MyHomePageState extends State<MyHomePage> {
   String dist3 = '';
   String bear3 = '';
 
+  String lati4 = '';
+  String long4 = '';
+  String alti4 = '';
+  String dist4 = '';
+  String bear4 = '';
+
+  double lati5 = 0;
+  double long5 = 0;
+  double alti5 = 0;
+  double dist5 = 0;
+  double bear5 = 0;
+
   bool change = false;
   bool change2 = false;
 
@@ -97,6 +109,35 @@ class _MyHomePageState extends State<MyHomePage> {
         bear3 = bear + 'から' + bear2;
 
 
+        lati4 = lati + '-' + lati2;
+        long4 = long + '-' + long2;
+        alti4 = alti + '-' + alti2;
+        dist4 = dist + '-' + dist2;
+        bear4 = bear + '-' + bear2;
+
+        // lati4 = lati + lati2;
+        // long4 = long + long2;
+        // alti4 = alti + alti2;
+        // dist4 = dist + dist2;
+        // bear4 = bear + bear2;
+
+       lati5 = double.parse(lati4);
+       long5 = double.parse(long4);
+       alti5 = double.parse(alti4);
+       dist5 = double.parse(dist4);
+       bear5 = double.parse(bear4);
+
+
+
+
+       print(lati5);
+       print(long5);
+       print(alti5);
+       print(dist5);
+       print(bear5);
+
+
+
       });
     }
   }
@@ -141,6 +182,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("高度: " + alti3),
             Text("距離: " + dist3),
             Text("方角: " + bear3),
+
+            Text("緯度: " + '$lati5'),
+            Text("経度: " + '$long5'),
+            Text("高度: " + '$alti5'),
+            Text("距離: " + '$dist5'),
+            Text("方角: " + '$bear5'),
 
 
 
