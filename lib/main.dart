@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:math_expressions/math_expressions.dart';
 void main() {
   runApp(MyApp());
 }
@@ -54,9 +55,14 @@ class _MyHomePageState extends State<MyHomePage> {
   double dist5 = 0;
   double bear5 = 0;
 
+  String lati6 = '';
+  String long6 = '';
+  String alti6 = '';
+  String dist6 = '';
+  String bear6 = '';
+
   bool change = false;
   bool change2 = false;
-
 
   Future<void> getLocation() async {
     if(change == false) {
@@ -69,8 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // 高度
       //print("高度: " + position.altitude.toString());
       // 距離をメートルで返す
-      double distanceInMeters =
-      Geolocator.distanceBetween(35.68, 139.76, -23.61, -46.40);
+      double distanceInMeters = Geolocator.distanceBetween(35.68, 139.76, -23.61, -46.40);
       //print(distanceInMeters);
       // 方位を返す
       double bearing = Geolocator.bearingBetween(35.68, 139.76, -23.61, -46.40);
@@ -102,42 +107,25 @@ class _MyHomePageState extends State<MyHomePage> {
       print('うつすよ??');
     }else{
       setState(() {
-        lati3 = lati + 'から' +  lati2;
-        long3 = long + 'から' + long2;
-        alti3 = alti + 'から' + alti2;
-        dist3 = dist + 'から' + dist2;
-        bear3 = bear + 'から' + bear2;
-
-
         lati4 = lati + '-' + lati2;
         long4 = long + '-' + long2;
         alti4 = alti + '-' + alti2;
         dist4 = dist + '-' + dist2;
         bear4 = bear + '-' + bear2;
 
-        // lati4 = lati + lati2;
-        // long4 = long + long2;
-        // alti4 = alti + alti2;
-        // dist4 = dist + dist2;
-        // bear4 = bear + bear2;
+        Parser p = Parser();
+        Expression exp = p.parse(lati4);
+        Expression exp2 = p.parse(long4);
+        Expression exp3 = p.parse(alti4);
+        Expression exp4 = p.parse(dist4);
+        Expression exp5 = p.parse(bear4);
+        ContextModel cm = ContextModel();
 
-       lati5 = double.parse(lati4);
-       long5 = double.parse(long4);
-       alti5 = double.parse(alti4);
-       dist5 = double.parse(dist4);
-       bear5 = double.parse(bear4);
-
-
-
-
-       print(lati5);
-       print(long5);
-       print(alti5);
-       print(dist5);
-       print(bear5);
-
-
-
+        lati6 = exp.evaluate(EvaluationType.REAL, cm).toString();
+        long6 = exp2.evaluate(EvaluationType.REAL, cm).toString();
+        alti6 = exp3.evaluate(EvaluationType.REAL, cm).toString();
+        dist6 = exp4.evaluate(EvaluationType.REAL, cm).toString();
+        bear6 = exp5.evaluate(EvaluationType.REAL, cm).toString();
       });
     }
   }
@@ -166,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("距離: " + dist),
             Text("方角: " + bear),
 
-           const SizedBox(height: 50),
+            const SizedBox(height: 50),
 
             Text("緯度: " + lati2),
             Text("経度: " + long2),
@@ -176,18 +164,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
             const SizedBox(height: 50),
 
-
-            Text("緯度: " + lati3),
-            Text("経度: " + long3),
-            Text("高度: " + alti3),
-            Text("距離: " + dist3),
-            Text("方角: " + bear3),
-
-            Text("緯度: " + '$lati5'),
-            Text("経度: " + '$long5'),
-            Text("高度: " + '$alti5'),
-            Text("距離: " + '$dist5'),
-            Text("方角: " + '$bear5'),
+            Text("緯度: " + lati6),
+            Text("経度: " + long6),
+            Text("高度: " + alti6),
+            Text("距離: " + dist6),
+            Text("方角: " + bear6),
 
 
 
