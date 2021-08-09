@@ -68,5 +68,13 @@ class HeightScreenController extends StateNotifier<HeightScreenState> with Locat
     print(change2);
   }
 
+  void reset() {
+    state = state.copyWith(
+      altitude: '',
+      altitude2: '',
+      altitude3: '',
+    );
+  }
+
 
 }
