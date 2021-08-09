@@ -32,24 +32,9 @@ class _HeightScreenState extends State<HeightScreen> {
         context: context,
       ),
       builder: (context, _) {
-        final latitude = context.select<HeightScreenState, String>((state) => state.latitude);
-        final longitude = context.select<HeightScreenState, String>((state) => state.longitude);
         final altitude = context.select<HeightScreenState, String>((state) => state.altitude);
-        final distanceInMeters = context.select<HeightScreenState, String>((state) => state.distanceInMeters);
-        final bearing = context.select<HeightScreenState, String>((state) => state.bearing);
-
-        final latitude2 = context.select<HeightScreenState, String>((state) => state.latitude2);
-        final longitude2 = context.select<HeightScreenState, String>((state) => state.longitude2);
         final altitude2 = context.select<HeightScreenState, String>((state) => state.altitude2);
-        final distanceInMeters2 = context.select<HeightScreenState, String>((state) => state.distanceInMeters2);
-        final bearing2 = context.select<HeightScreenState, String>((state) => state.bearing2);
-
-        final latitude3 = context.select<HeightScreenState, String>((state) => state.latitude3);
-        final longitude3 = context.select<HeightScreenState, String>((state) => state.longitude3);
         final altitude3 = context.select<HeightScreenState, String>((state) => state.altitude3);
-        final distanceInMeters3 = context.select<HeightScreenState, String>((state) => state.distanceInMeters3);
-        final bearing3 = context.select<HeightScreenState, String>((state) => state.bearing3);
-
         return GestureDetector(
           onTap: () => context.read<HeightScreenController>().initState(),
           child: Scaffold(
@@ -67,31 +52,19 @@ class _HeightScreenState extends State<HeightScreen> {
                       Column(
                         children: [
                           const Text('1回目の計測'),
-                          Text('緯度は、' + latitude),
-                          Text('経度は、' + longitude),
                           Text('高度は、' + altitude),
-                          Text('距離は、' + distanceInMeters),
-                          Text('方角は、' + bearing),
                         ],
                       ),
                       Column(
                         children: [
                           const Text('2回目の計測'),
-                          Text(latitude2),
-                          Text(longitude2),
                           Text(altitude2),
-                          Text(distanceInMeters2),
-                          Text(bearing2),
                         ],
                       ),
                       Column(
                         children: [
                           const Text('差分'),
-                          Text(latitude3),
-                          Text(longitude3),
                           Text(altitude3),
-                          Text(distanceInMeters3),
-                          Text(bearing3),
                         ],
                       ),
                     ],
